@@ -1,8 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:tudo_gostoso/models/recipe.dart';
+import 'package:tudo_gostoso/screens/home/widgets/details.dart';
 import 'package:tudo_gostoso/style.dart';
 
 class Home extends StatelessWidget {
+  final recipe = Recipe(
+    preparationTime: 40,
+    income: 12,
+    numberOfFavorites: 332936,
+    numberOfComments: 6847,
+    name: "Bolo de Chocolate",
+    ingredientsPaste: [],
+    ingredientsTopping: [],
+    preparationModePaste: [],
+    preparationModeTopping: [],
+    photo: "assets/images/logo.jpg",
+  );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,55 +34,7 @@ class Home extends StatelessWidget {
       body: Column(
         children: [
           Image.asset("assets/images/bolo.jpg"),
-          Container(
-            padding: EdgeInsets.symmetric(
-              vertical: 10, 
-            horizontal: 16,
-            ),
-            color: orangeTheme,
-            child: Column(
-              children: [
-                Text(
-                  "Bolo gelado",
-                  style: TextStyle(
-                    fontSize: 34,
-                    color: Colors.white,
-                  ),
-                ),
-                Row(
-                  children: [
-                    //1º Coluna
-                    Column(
-                      children: [
-                        FaIcon(
-                          FontAwesomeIcons.solidClock,
-                          color: Colors.white,
-                        ),
-                        Padding(
-                          padding: EdgeInsets.symmetric(vertical: 5),
-                          child: Text(
-                            "PREPARO",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                        Text(
-                          "40 MIN",
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                )
-              ],
-            ),
-          ),
+          Details(recipe),
         ],
       ),
     );
