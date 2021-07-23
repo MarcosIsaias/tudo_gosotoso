@@ -18,7 +18,7 @@ class Details extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            "Bolo gelado",
+            recipeObj.name,
             style: TextStyle(
               fontSize: 34,
               color: Colors.white,
@@ -132,6 +132,14 @@ class Details extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                         fontSize: 12,
                       ),
+                    ),
+                  ),
+                  Text(
+                    "1.200",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ],
